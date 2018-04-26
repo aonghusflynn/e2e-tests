@@ -1,0 +1,14 @@
+{
+    "name": "e2e-tests",
+    "version": "1.0.0",
+    "description": "This is the end to end functional test suite",
+    "main": "index.js",
+    "scripts": {
+        "test": "./node_modules/cypress/bin/cypress"
+    },
+    "author": "aflynn@salesforce.com",
+    "license": "ISC",
+    "devDependencies": {
+        "cypress": "^2.1.0"
+    }
+}
