@@ -4,7 +4,7 @@
     "description": "This is the end to end functional test suite",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/cypress/bin/cypress"
+        "test": "./node_modules/cypress/bin/cypress open"
     },
     "author": "aflynn@salesforce.com",
     "license": "ISC",
