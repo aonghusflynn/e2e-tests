@@ -50,12 +50,24 @@ describe('These are the tests for the homepage prospect version', () => {
 
         })
 
+       
+
+
+
+
       
+           //DEMO CTA appears & goes to correct location
+           it('DEMO CTA appears & goes to correct location', function(){
+            cy.get('.jumbo-content-wrap').find('.cta_0>.btn-container a').should('have.attr', 'href')
+            .and('include', /*'https://www.salesforce.com/'+locales[i]+*/'/form/demo/demo-overview.jsp')
+            .then((href) => {
+                cy.request(href).its('status').should('equal', 200)     
+              })
+          
+          
+        })
 
-
-
-
-         //Free Trial CTA in jumbotron goes to correct location - not required - place keeping code as reference
+          //Free Trial CTA in jumbotron goes to correct location - not required - place keeping code as reference
          it('Free Trial CTA goes to correct location', function() {
             
             cy.get('.cta_1>.btn-container a').then(($myUrl) => {
@@ -63,20 +75,6 @@ describe('These are the tests for the homepage prospect version', () => {
                 let url = href
                 cy.request(url).its('status').should('equal', 200)              
             })
-          
-        })
-
-           //DEMO CTA appears & goes to correct location
-           it('DEMO CTA appears & goes to correct location', function(){
-            
-          
-
-            cy.get('.jumbo-content-wrap').find('.cta_0>.btn-container a').should('have.attr', 'href')
-            .and('include', /*'https://www.salesforce.com/'+locales[i]+*/'/form/demo/demo-overview.jsp')
-            .then((href) => {
-                cy.request(href).its('status').should('equal', 200)     
-              })
-          
           
         })
 
