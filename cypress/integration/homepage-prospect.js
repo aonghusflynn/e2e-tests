@@ -15,7 +15,7 @@ describe('These are the tests for the homepage prospect version', () => {
        
          
 
-        //Free Trial CTA goes to correct place
+        //Free Trial CTA in jumbotron goes to correct - not required - place keeping code as reference
         it('Free Trial CTA goes to correct place', function() {
             
             cy.get('.cta_1>.btn-container a').then(($myUrl) => {
@@ -26,6 +26,21 @@ describe('These are the tests for the homepage prospect version', () => {
           
         })
 
+
+        //Page has visible free trial
+        it('Page has visible free trial', function() {
+            
+          
+            cy.get('.navbar_free_trial>.btn-container a')
+            .should('be.visible')
+            .and('have.attr', 'href')
+            .and('include', '/form/signup/')
+            .then((href) => {
+                cy.request(href).its('status').should('equal', 200)     
+              })
+          
+          
+        })
          //Page has login Button
          it('page has login button', function() {
           
