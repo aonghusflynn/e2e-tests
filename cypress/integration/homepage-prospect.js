@@ -13,20 +13,7 @@ describe('These are the tests for the homepage prospect version', () => {
         })
 
        
-         
-
-        //Free Trial CTA in jumbotron goes to correct - not required - place keeping code as reference
-        it('Free Trial CTA goes to correct place', function() {
-            
-            cy.get('.cta_1>.btn-container a').then(($myUrl) => {
-                const href = $myUrl.prop('href')
-                let url = href
-                cy.request(url).its('status').should('equal', 200)              
-            })
-          
-        })
-
-
+        
         //Page has visible free trial
         it('Page has visible free trial', function() {
             
@@ -34,22 +21,42 @@ describe('These are the tests for the homepage prospect version', () => {
             cy.get('.navbar_free_trial>.btn-container a')
             .should('be.visible')
             .and('have.attr', 'href')
-            .and('include', '/form/signup/')
+            .and('include', 'https://www.salesforce.com/'+locales[i]+'/form/signup/freetrial-sales-pe.jsp')
             .then((href) => {
                 cy.request(href).its('status').should('equal', 200)     
               })
           
           
         })
-         //Page has login Button
+         //Page has login Button & goes to correct location
          it('page has login button', function() {
           
             cy.get('.nav_login>.btn-container a')
             .should('have.attr', 'href')
-            .and('include', 'login')
+            .and('include', 'https://login.salesforce.com/?locale='+ locales[i])
             .then((href) => {
                 cy.request(href).its('status').should('equal', 200)     
               })
+          
+        })
+
+
+         //Page has nav
+         it('Page has nav', function() {
+            
+            cy.get('.expandableNavigationBarComponent')
+            .should('be.visible')
+
+        })
+
+         //Free Trial CTA in jumbotron goes to correct - not required - place keeping code as reference
+         it('Free Trial CTA goes to correct place', function() {
+            
+            cy.get('.cta_1>.btn-container a').then(($myUrl) => {
+                const href = $myUrl.prop('href')
+                let url = href
+                cy.request(url).its('status').should('equal', 200)              
+            })
           
         })
 
