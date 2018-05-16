@@ -4,3 +4,5 @@
 2. cd into folder
 3. Install Cypress by running  **./node_modules/cypress/bin/cypress install**
 4. If you have issues, restart your machine
+
+## We will use git-flow from now on
