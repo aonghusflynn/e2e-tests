@@ -12,6 +12,21 @@ describe('These are the tests for the EMEA core Sales Cloud SEM pages', () => {
             cy.title().should('not.include', '404')
             
         })
+
+        //Check if Nav is not existing
+        it('should not have a nav', function() {
+            cy.get('nav')
+            .should('not.have.class', 'navbar')
+            
+        })
+
+        //Check if Login button is not existing
+        it('should not have a log in btn', function() {
+            cy.get('.nav_login>.btn-container a')
+            .should('not.exist')
+            
+        })
+        
      }
    
     
