@@ -1,6 +1,6 @@
 describe('These are the tests for the EMEA core Sales Cloud SEM pages', () => {
     
-    const locales = ['eu', 'fr', 'uk', 'de', 'nl'];
+    const locales = ['nl', 'fr', 'uk', 'eu', 'de'];
     for (let i = 0; i < locales.length; ++i) {
         before(function() {
             // Visiting our app before each test removes any state build up from
@@ -10,6 +10,7 @@ describe('These are the tests for the EMEA core Sales Cloud SEM pages', () => {
        //page renders
         it('should not be a 404 page', function() {
             cy.title().should('not.include', '404')
+            
         })
      }
    
